@@ -54,15 +54,49 @@ body {
 }
 
 .navbar .hamburger {
-    display: none;
+  display: none;
+  cursor: pointer;
 }
 
-.navbar .bar {
-    background-color: black;
-    height: 4px;
-    width: 36px;
-    margin: 3px;
-    border-radius: 10px;
+.bar1,
+.bar2,
+.bar3 {
+  background-color: black;
+  height: 4px;
+  width: 36px;
+  margin: 3px;
+  border-radius: 10px;
+}
+
+.mobileNav {
+  width: 80px;
+  background-color: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 3;
+  right: -100px;
+  top: 60px;
+  padding: 6px;
+  transition: all 0.5s;
+}
+
+.mobileNav a {
+  text-decoration: none;
+  color: black;
+  margin: 16px 0;
+}
+
+.mobileNav a:hover {
+  text-decoration: underline;
+}
+
+.mobileNav img {
+  width: 24px;
+  height: 24px;
 }
 
 .project-grid {
@@ -184,7 +218,6 @@ body {
     z-index: 3;
     background-color: white;
     width: 100%;
-
   }
   .navbar .left {
     font-size: 28px;
@@ -215,5 +248,50 @@ body {
   .footer {
     padding: 40px;
     font-size: 14px;
+  }
+}
+
+.animateBar1 {
+  animation: flipBar1 0.8s forwards;
+}
+
+.animateBar2 {
+  animation: fadeBar2 0.8s forwards;
+}
+
+.animateBar3 {
+  animation: flipBar3 0.8s forwards;
+}
+
+.openMobileNav {
+  transform: translateX(-100px);
+}
+
+@keyframes flipBar1 {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(45deg) translate(4px, 10px);
+  }
+}
+
+@keyframes fadeBar2 {
+  from {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+  to {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+}
+
+@keyframes flipBar3 {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(-45deg) translate(4px, -10px);
   }
 }
